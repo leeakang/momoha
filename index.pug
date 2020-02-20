@@ -55,7 +55,7 @@ html(lang="en")
                                     input#valin(type="text" onkeydown="if(event.keyCode==13){get_list()}" autocomplete="off" spellcheck="false" placeholder="Spread an opinion")
                                     button#submit(onclick="get_list()") Send
                 #mainPage.pg03
-                    #contents.leftSide goods
+                    #contents.leftSide 3-1
                     #contents.rightSide 3-2
                 #mainPage.pg04
                     #contents.leftSide Contact
@@ -106,15 +106,11 @@ html(lang="en")
                     div
                         div
                         div
-    script(type='text/javascript' src='//wcs.naver.net/wcslog.js')
-    script(type='text/javascript').
+    script.
         //loading
         function loading(){
-            window.addEventListener('DOMContentLoaded', function()
-            {
             document.getElementById("loading").style.display = "none";
             document.body.style.display = "";
-            });
         }
         rippleEffect();
         //mousePointer Start
@@ -256,6 +252,3 @@ html(lang="en")
                 }
                 inlist.scrollTop = inlist.scrollHeight;
             }//chat function end
-        if(!wcs_add) var wcs_add = {};
-        wcs_add["wa"] = "46caa978f85758";
-        wcs_do();
