@@ -28,7 +28,7 @@ html(lang="en")
             #loadingCircle
         #cursor
         #circle
-        #wrapper(draggable="true" ondragstart="")
+        #wrapper(draggable="true")
             #cont
                 #mainPage.pg01
                     #contents.leftSide
@@ -111,7 +111,7 @@ html(lang="en")
         //loading
         function loading(){
             document.getElementById("loading").style.display = "none";
-            document.body.style.display = "";
+            document.getElementById('wrapper').style.display = "block";
         }
         rippleEffect();
         //mousePointer Start

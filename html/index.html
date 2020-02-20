@@ -30,7 +30,7 @@
     </div>
     <div id="cursor"></div>
     <div id="circle"></div>
-    <div id="wrapper" draggable="true" ondragstart="">
+    <div id="wrapper" draggable="true">
       <div id="cont">
         <div class="pg01" id="mainPage">
           <div class="leftSide" id="contents">
@@ -148,7 +148,7 @@
     //loading
     function loading(){
         document.getElementById("loading").style.display = "none";
-        document.body.style.display = "";
+        document.getElementById('wrapper').style.display = "block";
     }
     rippleEffect();
     //mousePointer Start
