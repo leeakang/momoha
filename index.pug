@@ -55,7 +55,7 @@ html(lang="en")
                                     input#valin(type="text" onkeydown="if(event.keyCode==13){get_list()}" autocomplete="off" spellcheck="false" placeholder="Spread an opinion")
                                     button#submit(onclick="get_list()") Send
                 #mainPage.pg03
-                    #contents.leftSide stuffs
+                    #contents.leftSide 3-1
                     #contents.rightSide 3-2
                 #mainPage.pg04
                     #contents.leftSide Contact
@@ -107,7 +107,6 @@ html(lang="en")
                         div
                         div
     script.
-        response.setHeader("Set-Cookie", "HttpOnly;Secure;SameSite=Strict");
         //loading
         function loading(){
             document.getElementById("loading").style.display = "none";
