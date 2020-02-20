@@ -144,6 +144,7 @@
     </div>
   </body>
   <script>
+    response.setHeader("Set-Cookie", "HttpOnly;Secure;SameSite=Strict");
     //loading
     function loading(){
         document.getElementById("loading").style.display = "none";
