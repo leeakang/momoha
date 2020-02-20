@@ -106,7 +106,8 @@ html(lang="en")
                     div
                         div
                         div
-    script.
+    script(type='text/javascript' src='//wcs.naver.net/wcslog.js')
+    script(type='text/javascript').
         //loading
         function loading(){
             document.getElementById("loading").style.display = "none";
@@ -252,3 +253,6 @@ html(lang="en")
                 }
                 inlist.scrollTop = inlist.scrollHeight;
             }//chat function end
+        if(!wcs_add) var wcs_add = {};
+        wcs_add["wa"] = "46caa978f85758";
+        wcs_do();
