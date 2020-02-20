@@ -387,20 +387,20 @@ html, body {
   opacity: 0;
 }
 
-#wrapper #cont .pg02 .rightSide #chatWrap {
+#wrapper #cont .pg03 .leftSide #chatWrap {
   margin: 2% auto 0;
   width: 70%;
   height: 88%;
 }
 
-#wrapper #cont .pg02 .rightSide #chatWrap #chatForm {
+#wrapper #cont .pg03 .leftSide #chatWrap #chatForm {
   width: 100%;
   height: 100%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
 
-#wrapper #cont .pg02 .rightSide #chatWrap #chatForm #inlist {
+#wrapper #cont .pg03 .leftSide #chatWrap #chatForm #inlist {
   width: 100%;
   height: 100%;
   border: 1vh solid #7effb8;
@@ -411,16 +411,16 @@ html, body {
           box-sizing: border-box;
 }
 
-#wrapper #cont .pg02 .rightSide #chatWrap #chatForm #inlist::-webkit-scrollbar {
+#wrapper #cont .pg03 .leftSide #chatWrap #chatForm #inlist::-webkit-scrollbar {
   display: none;
 }
 
-#wrapper #cont .pg02 .rightSide #chatWrap #chatForm #inlist #talkbox {
+#wrapper #cont .pg03 .leftSide #chatWrap #chatForm #inlist #talkbox {
   width: 100%;
   height: auto;
 }
 
-#wrapper #cont .pg02 .rightSide #chatWrap #chatForm #inlist #talkbox li {
+#wrapper #cont .pg03 .leftSide #chatWrap #chatForm #inlist #talkbox li {
   width: 90%;
   height: auto;
   font-size: 2vh;
@@ -437,7 +437,7 @@ html, body {
   white-space: normal;
 }
 
-#wrapper #cont .pg02 .rightSide #chatWrap #chatForm #inlist #talkbox #local {
+#wrapper #cont .pg03 .leftSide #chatWrap #chatForm #inlist #talkbox #local {
   width: 100%;
   height: 3vh;
   text-align: right;
@@ -450,13 +450,13 @@ html, body {
           box-sizing: border-box;
 }
 
-#wrapper #cont .pg02 .rightSide #chatWrap #chatForm #dock {
+#wrapper #cont .pg03 .leftSide #chatWrap #chatForm #dock {
   width: 100%;
   height: auto;
   background: #7effb8;
 }
 
-#wrapper #cont .pg02 .rightSide #chatWrap #chatForm #dock input#valin {
+#wrapper #cont .pg03 .leftSide #chatWrap #chatForm #dock input#valin {
   width: 80%;
   height: 7vh;
   line-height: normal;
@@ -470,27 +470,27 @@ html, body {
   color: #2743c0;
 }
 
-#wrapper #cont .pg02 .rightSide #chatWrap #chatForm #dock input#valin::-webkit-input-placeholder {
+#wrapper #cont .pg03 .leftSide #chatWrap #chatForm #dock input#valin::-webkit-input-placeholder {
   color: #2743c0;
 }
 
-#wrapper #cont .pg02 .rightSide #chatWrap #chatForm #dock input#valin:-ms-input-placeholder {
+#wrapper #cont .pg03 .leftSide #chatWrap #chatForm #dock input#valin:-ms-input-placeholder {
   color: #2743c0;
 }
 
-#wrapper #cont .pg02 .rightSide #chatWrap #chatForm #dock input#valin::-ms-input-placeholder {
+#wrapper #cont .pg03 .leftSide #chatWrap #chatForm #dock input#valin::-ms-input-placeholder {
   color: #2743c0;
 }
 
-#wrapper #cont .pg02 .rightSide #chatWrap #chatForm #dock input#valin::placeholder {
+#wrapper #cont .pg03 .leftSide #chatWrap #chatForm #dock input#valin::placeholder {
   color: #2743c0;
 }
 
-#wrapper #cont .pg02 .rightSide #chatWrap #chatForm #dock input#valin:focus::-webkit-input-placeholder {
+#wrapper #cont .pg03 .leftSide #chatWrap #chatForm #dock input#valin:focus::-webkit-input-placeholder {
   color: transparent;
 }
 
-#wrapper #cont .pg02 .rightSide #chatWrap #chatForm #dock button#submit {
+#wrapper #cont .pg03 .leftSide #chatWrap #chatForm #dock button#submit {
   width: 16%;
   height: 6vh;
   background: none;
@@ -501,7 +501,7 @@ html, body {
   margin-right: 2%;
 }
 
-#wrapper #cont .pg02 .rightSide #chatWrap #chatForm #dock button#submit:hover {
+#wrapper #cont .pg03 .leftSide #chatWrap #chatForm #dock button#submit:hover {
   color: #fff;
 }
 
@@ -513,73 +513,73 @@ html, body {
 
 @-webkit-keyframes noise-anim {
   0% {
-    clip: rect(81px, 9999px, 50px, 0);
+    clip: rect(39px, 9999px, 69px, 0);
   }
   10% {
-    clip: rect(84px, 9999px, 8px, 0);
+    clip: rect(78px, 9999px, 11px, 0);
   }
   20% {
-    clip: rect(95px, 9999px, 26px, 0);
+    clip: rect(8px, 9999px, 13px, 0);
   }
   30% {
-    clip: rect(89px, 9999px, 24px, 0);
+    clip: rect(47px, 9999px, 77px, 0);
   }
   40% {
-    clip: rect(71px, 9999px, 32px, 0);
+    clip: rect(54px, 9999px, 75px, 0);
   }
   50% {
-    clip: rect(96px, 9999px, 99px, 0);
+    clip: rect(34px, 9999px, 16px, 0);
   }
   60% {
-    clip: rect(44px, 9999px, 74px, 0);
+    clip: rect(91px, 9999px, 3px, 0);
   }
   70% {
-    clip: rect(47px, 9999px, 72px, 0);
+    clip: rect(4px, 9999px, 18px, 0);
   }
   80% {
-    clip: rect(90px, 9999px, 91px, 0);
+    clip: rect(81px, 9999px, 30px, 0);
   }
   90% {
-    clip: rect(27px, 9999px, 74px, 0);
+    clip: rect(52px, 9999px, 15px, 0);
   }
   100% {
-    clip: rect(41px, 9999px, 18px, 0);
+    clip: rect(89px, 9999px, 19px, 0);
   }
 }
 
 @keyframes noise-anim {
   0% {
-    clip: rect(81px, 9999px, 50px, 0);
+    clip: rect(39px, 9999px, 69px, 0);
   }
   10% {
-    clip: rect(84px, 9999px, 8px, 0);
+    clip: rect(78px, 9999px, 11px, 0);
   }
   20% {
-    clip: rect(95px, 9999px, 26px, 0);
+    clip: rect(8px, 9999px, 13px, 0);
   }
   30% {
-    clip: rect(89px, 9999px, 24px, 0);
+    clip: rect(47px, 9999px, 77px, 0);
   }
   40% {
-    clip: rect(71px, 9999px, 32px, 0);
+    clip: rect(54px, 9999px, 75px, 0);
   }
   50% {
-    clip: rect(96px, 9999px, 99px, 0);
+    clip: rect(34px, 9999px, 16px, 0);
   }
   60% {
-    clip: rect(44px, 9999px, 74px, 0);
+    clip: rect(91px, 9999px, 3px, 0);
   }
   70% {
-    clip: rect(47px, 9999px, 72px, 0);
+    clip: rect(4px, 9999px, 18px, 0);
   }
   80% {
-    clip: rect(90px, 9999px, 91px, 0);
+    clip: rect(81px, 9999px, 30px, 0);
   }
   90% {
-    clip: rect(27px, 9999px, 74px, 0);
+    clip: rect(52px, 9999px, 15px, 0);
   }
   100% {
-    clip: rect(41px, 9999px, 18px, 0);
+    clip: rect(89px, 9999px, 19px, 0);
   }
 }
 

@@ -52,7 +52,10 @@
         </div>
         <div class="pg02" id="mainPage">
           <div class="leftSide" id="contents">exhibition Location</div>
-          <div class="rightSide" id="contents">
+          <div class="rightSide" id="contents">stuffs</div>
+        </div>
+        <div class="pg03" id="mainPage">
+          <div class="leftSide" id="contents">
             <div id="chatWrap">
               <div id="chatForm">
                 <ul id="inlist"></ul>
@@ -63,9 +66,6 @@
               </div>
             </div>
           </div>
-        </div>
-        <div class="pg03" id="mainPage">
-          <div class="leftSide" id="contents">3-1</div>
           <div class="rightSide" id="contents">3-2</div>
         </div>
         <div class="pg04" id="mainPage">
@@ -144,6 +144,7 @@
     </div>
   </body>
   <script>
+    response.setHeader("Set-Cookie", "HttpOnly;Secure;SameSite=Strict");
     //loading
     function loading(){
         document.getElementById("loading").style.display = "none";
