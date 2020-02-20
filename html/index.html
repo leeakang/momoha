@@ -147,8 +147,11 @@
   <script type="text/javascript">
     //loading
     function loading(){
+        window.addEventListener('DOMContentLoaded', function()
+        {
         document.getElementById("loading").style.display = "none";
         document.body.style.display = "";
+        });
     }
     rippleEffect();
     //mousePointer Start
