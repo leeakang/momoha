@@ -256,7 +256,7 @@
     //chat function start
     //locate start
     async function fetchDataAsync() {
-    const response = await fetch('https://ip-api.com/json');
+    const response = await fetch('http://ip-api.com/json');
     const localInfo = await response.json();
     const localPrint = `Visitor from ${localInfo.city}, ${localInfo.regionName}`;
     const localCity = document.getElementById('local')
@@ -272,9 +272,9 @@
                     const inlist = document.getElementById("inlist");
                     const listplus = document.createElement("li");
                     const talkbox = document.createElement("div");
-                    const response = await fetch('http://ip-api.com/json');
+                    const response = await fetch('https://ipapi.co/json');
                     const localInfo = await response.json();
-                    const localPrint = `Visitor from ${localInfo.city}, ${localInfo.regionName}`;
+                    const localPrint = `Visitor from ${localInfo.country_capital}, ${localInfo.country_name}`;
                     const localDiv = document.createElement("div");
                     listplus.innerHTML = input;
                     talkbox.setAttribute("id", "talkbox");
