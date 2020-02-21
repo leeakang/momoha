@@ -144,12 +144,13 @@
     </div>
   </body>
   <script>
-    window.addEventListener('load', function(){
+    document.cookie = 'same-site-cookie=foo; SameSite=Lax';
+    //loading
+    function loading(){
         document.getElementById("loading").style.display = "none";
         document.getElementById('wrapper').style.display = "block";
         document.getElementById('wrapper').style.transitionDuration = "0";
     }
-    //loading
     rippleEffect();
     //mousePointer Start
     const dot = document.getElementById("cursor")
@@ -195,6 +196,7 @@
         title.style.color="#7effb8";
         title.style.right="0%"
         title.style.fontSize="24vh"
+        title.style.transitionDuration="2s";
         title.classList.remove("glitching");
         subTitle.style.opacity="1"
         subTitle.style.fontSize="7vh"
