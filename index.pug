@@ -245,13 +245,13 @@ html(lang="en")
                         listplus.innerHTML = input;
                         talkbox.setAttribute("id", "talkbox");
                         localDiv.setAttribute("id", "local");
-                        document.getElementById("valin").value = "";
                         document.getElementById("inlist").appendChild(talkbox);
                         document.getElementById("talkbox").appendChild(listplus);
                         document.getElementById("talkbox").appendChild(localDiv);
                         localDiv.innerHTML = localPrint
                     }
                     fetchDataAsync();
+                    document.getElementById("valin").value = "";
                 }
                 inlist.scrollTop = inlist.scrollHeight;
             }//chat function end
