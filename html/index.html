@@ -70,7 +70,26 @@
         </div>
         <div class="pg04" id="mainPage">
           <div class="leftSide" id="contents">Contact</div>
-          <div class="leftSide" id="contents">Special Thanks to</div>
+          <div class="rightSide" id="contents">
+            <div class="fade"></div>
+            <section class="star-wars">
+              <div class="crawl">
+                <div class="title">
+                  <p>MOMOHA WEB DEVELOP PROJECT</p>
+                  <h1>SPECIAL THANKS TO</h1>
+                  <p></p>KANG DA YEON
+                  <p></p>MIN SEONG JAE
+                  <p></p>KIM HYO JI
+                  <p></p>KANG HUI JUN
+                  <p></p>YEON SEUNG IL
+                  <p></p>YEON PYEONG AN
+                  <p></p>YOUNG HWA
+                  <p></p>IM HYOUN JI
+                  <p></p>JUN HA NEUL
+                </div>
+              </div>
+            </section>
+          </div>
         </div>
       </div>
     </div>
@@ -178,11 +197,11 @@
     animateCircle();
     document.onmousedown = (event) => {
         const dot = document.getElementById("cursor")
-        cursor.style.transform="scale(0.7) translate(-435%, -435%)"
+        dot.style.transform="scale(0.7) translate(-435%, -435%)"
     }
     document.onmouseup = (event) => {
         const dot = document.getElementById("cursor")
-        cursor.style.transform="scale(1) translate(-300%, -300%)"
+        dot.style.transform="scale(1) translate(-300%, -300%)"
     }
     //mousePointer End
     
@@ -198,7 +217,7 @@
         title.style.fontSize="24vh"
         title.style.transitionDuration="2s";
         title.classList.remove("glitching");
-        subTitle.style.opacity="1"
+        subTitle.style. opacity="1"
         subTitle.style.fontSize="7vh"
         start.style.display="none"
         wrapper.style.overflowX="auto"
