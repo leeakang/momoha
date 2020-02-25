@@ -39,8 +39,8 @@ html(lang="en")
                             button(onclick="start()") click for Swim
                         #pics
                             div.emotionPic
-                                img(src="../images/emotion04.jpg")
-                                img(src="../images/emotion05.jpg")
+                                img(src="../images/emotion07.jpg")
+                                img(src="../images/emotion07.jpg")
                                 img(src="../images/emotion07.jpg")
                     #contents.rightSide
                         #title.glitching(data-text="MOMOHA") MOMOHA
@@ -60,9 +60,30 @@ html(lang="en")
                 #mainPage.pg04
                     #contents.leftSide Contact
                     #contents.rightSide
-                        .fade
                         section.star-wars
-                            .crawl
+                            .sub
+                                .title
+                                    p MOMOHA WEB DEVELOP PROJECT
+                                    h1 SPECIAL THANKS TO
+                                    p
+                                    | KANG DA YEON
+                                    p
+                                    | MIN SEONG JAE
+                                    p
+                                    | KIM HYO JI
+                                    p
+                                    | KANG HUI JUN
+                                    p
+                                    | YEON SEUNG IL
+                                    p
+                                    | YEON PYEONG AN
+                                    p
+                                    | YOUNG HWA
+                                    p
+                                    | IM HYOUN JI
+                                    p
+                                    | JUN HA NEUL
+                            .sub02
                                 .title
                                     p MOMOHA WEB DEVELOP PROJECT
                                     h1 SPECIAL THANKS TO
@@ -279,3 +300,8 @@ html(lang="en")
                 }
                 inlist.scrollTop = inlist.scrollHeight;
             }//chat function end
+        function starwars(){
+            const sub02 = document.querySelector('.sub02');
+            sub02.style.animation = "crawl 20s linear infinite"
+        }
+        setTimeout(starwars, 10000);

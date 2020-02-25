@@ -394,54 +394,58 @@ html, body{
         }//pg02
         .pg04{
             .rightSide{
-                .fade {
-                    position: relative;
-                    width: 100%;
-                    z-index: 1;
-                  }       
-                  .star-wars {
+                .star-wars {
                     display: flex;
                     justify-content: center;
                     position: relative;
                     height: 100%;
+                    width:100%;
                     color: $colorPT;
-                    font-size: 500%;
                     letter-spacing: 1vh;
                     line-height: 8vh;
                     text-align: justify;
-                  }
-                  
-                  .crawl {
+                }
+                .sub {
                     position: relative;
+                    right:0;
                     top: 100%;
                     animation: crawl 20s linear infinite;
-                  }
-                  
-                  .crawl > .title {
-                    font-size: 3vh;
-                    text-align: center;
-                  }
-                  
-                  .crawl > .title h1 {
-                    margin: 0 0 3vh;
-                    text-transform: uppercase;
-                  }
-                  
+                    .title {
+                        font-size: 3vh;
+                        text-align: center;
+                        h1{
+                            margin: 0 0 3vh;
+                            text-transform: uppercase;
+                        }
+                    }
+                }//sub
+                .sub02 {
+                    position: absolute;
+                    top: 100%;
+                    .title {
+                        font-size: 3vh;
+                        text-align: center;
+                        h1{
+                            margin: 0 0 3vh;
+                            text-transform: uppercase;
+                        }
+                    }
+                }//sub02
                   @keyframes crawl {
                     0% {
-                      top: 100%;
+                        top: 100%;
                     }
-                    25% {
-                        top:0%
+                    25% { 
+                        top: 50%;
                     }
                     50%{
-                        top:0%
+                        top: 0%;
                     }
                     75%{
-                        top:0%
+                        top:-50%;
                     }
-                    100% { 
-                      top: -100%;
+                    100%{
+                        top:-100%;
                     }
                   }
             }//rightSide
