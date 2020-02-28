@@ -36,11 +36,11 @@ html(lang="en")
             #nav
                 ul(onclick="smooth()")
                     li
-                        a(href="#") Home
+                        a(href="#home") Home
                     li
-                        a(href="#") Exhibition Location
+                        a(href="#ex") Exhibition Location
                     li
-                        a(href="#") Guest Book
+                        a(href="#chat") Guest Book
                     li
                         a(href="#") Look Book
                     li
@@ -48,10 +48,10 @@ html(lang="en")
                     li
                         a(href="#") Contact
                     li
-                        a(href="#star-wars") Concerned
+                        a(href="#subs") Concerned
             #cont
                 #mainPage.pg01
-                    #contents.leftSide
+                    .contents.leftSide#home
                         #start
                             div.subText
                                 | Moimyun Morado Hagetzy,
@@ -62,12 +62,12 @@ html(lang="en")
                                 img(src="../images/emotion07.jpg")
                                 img(src="../images/emotion07.jpg")
                                 img(src="../images/emotion07.jpg")
-                    #contents.rightSide
+                    .contents.rightSide
                         #title.glitching(data-text="MOMOHA") MOMOHA
                         .subTitle ももは。<!--モモバ。-->
                 #mainPage.pg02
-                    #contents.leftSide 
-                    #contents.rightSide
+                    .contents.leftSide#ex
+                    .contents.rightSide#chat
                         #chatWrap
                             #chatForm
                                 ul#inlist
@@ -75,11 +75,11 @@ html(lang="en")
                                     input#valin(type="text" onkeydown="if(event.keyCode==13){get_list()}" autocomplete="off" spellcheck="false" placeholder="Spread an opinion")
                                     button#submit(onclick="get_list()") Send
                 #mainPage.pg03
-                    #contents.leftSide
-                    #contents.rightSide
+                    .contents.leftSide
+                    .contents.rightSide
                 #mainPage.pg04
-                    #contents.leftSide
-                    #contents.rightSide
+                    .contents.leftSide
+                    .contents.rightSide#subs
                         #star-wars
                             .sub
                                 .title
@@ -217,7 +217,7 @@ html(lang="en")
             cursor.style.transform="scale(1) translate(-300%, -300%)"
         }
         //mousePointer End
-
+        const ham = document.getElementById('hamMenu');
         function start() {
             const start = document.getElementById('start'),
             title = document.getElementById('title'),
@@ -240,21 +240,17 @@ html(lang="en")
             nav.style.transitionDuration="1s"
             scroll();
         }
-        function smooth(){
-            wrapper.style.scrollBehavior="smooth"
-            setTimeout(scrollnone,10)
-        }
         function scrollnone(){
             wrapper.style.scrollBehavior="unset"
         }
         //scroll start
         function scroll() {
-        const ham = document.getElementById('hamMenu');
         wrapper.addEventListener('mousewheel', function(e){
             e.preventDefault();
             nav.style.top = '-10%'
             ham.style.transitionDuration="1s"
             ham.style.top="6%"
+            cont.style.opacity="1"
             if(e.wheelDelta >= 0){
                 wrapper.scrollBy(-50, 0);
             }else if(e.wheelDelta < 0){
@@ -262,9 +258,16 @@ html(lang="en")
             }})
         }//scroll end
         function hamclick(){
-            const ham = document.getElementById('hamMenu');
             nav.style.top = '6%'
             ham.style.top = '-10%'
+            cont.style.opacity = '0.5'
+        }
+        function smooth(){
+            wrapper.style.scrollBehavior="smooth"
+            ham.style.top = '6%'
+            nav.style.top = '-10%'
+            cont.style.opacity =  '1'
+            setTimeout(scrollnone,10)
         }
         function rippleEffect() {
         const wave = document.querySelectorAll('[data-animation="ripple"]');

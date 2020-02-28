@@ -242,6 +242,7 @@ html, body {
 }
 
 #wrapper #nav ul li a {
+  cursor: none;
   text-decoration: none;
   color: #7effb8;
   font-size: 2.5vh;
@@ -281,6 +282,8 @@ html, body {
   white-space: nowrap;
   position: absolute;
   right: 0%;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
 }
 
 #wrapper #cont #mainPage {
@@ -290,7 +293,7 @@ html, body {
   margin: 0 auto;
 }
 
-#wrapper #cont #mainPage #contents {
+#wrapper #cont #mainPage .contents {
   width: 50%;
   height: 100%;
   display: inline-block;
@@ -422,8 +425,8 @@ html, body {
 #wrapper #cont .pg01 .rightSide .subTitle {
   font-family: 'Kosugi', sans-serif;
   position: absolute;
-  top: 0;
-  right: 20vh;
+  top: 1.5vh;
+  right: 21vh;
   -webkit-writing-mode: vertical-rl;
       -ms-writing-mode: tb-rl;
           writing-mode: vertical-rl;
@@ -646,73 +649,73 @@ html, body {
 
 @-webkit-keyframes noise-anim {
   0% {
-    clip: rect(17px, 9999px, 41px, 0);
+    clip: rect(12px, 9999px, 53px, 0);
   }
   10% {
-    clip: rect(40px, 9999px, 1px, 0);
+    clip: rect(75px, 9999px, 44px, 0);
   }
   20% {
-    clip: rect(40px, 9999px, 62px, 0);
+    clip: rect(61px, 9999px, 46px, 0);
   }
   30% {
-    clip: rect(93px, 9999px, 34px, 0);
+    clip: rect(21px, 9999px, 5px, 0);
   }
   40% {
-    clip: rect(55px, 9999px, 17px, 0);
+    clip: rect(75px, 9999px, 35px, 0);
   }
   50% {
-    clip: rect(21px, 9999px, 74px, 0);
+    clip: rect(3px, 9999px, 45px, 0);
   }
   60% {
-    clip: rect(75px, 9999px, 50px, 0);
+    clip: rect(9px, 9999px, 79px, 0);
   }
   70% {
-    clip: rect(38px, 9999px, 68px, 0);
+    clip: rect(62px, 9999px, 27px, 0);
   }
   80% {
-    clip: rect(25px, 9999px, 92px, 0);
+    clip: rect(22px, 9999px, 46px, 0);
   }
   90% {
-    clip: rect(35px, 9999px, 11px, 0);
+    clip: rect(42px, 9999px, 72px, 0);
   }
   100% {
-    clip: rect(88px, 9999px, 84px, 0);
+    clip: rect(27px, 9999px, 3px, 0);
   }
 }
 
 @keyframes noise-anim {
   0% {
-    clip: rect(17px, 9999px, 41px, 0);
+    clip: rect(12px, 9999px, 53px, 0);
   }
   10% {
-    clip: rect(40px, 9999px, 1px, 0);
+    clip: rect(75px, 9999px, 44px, 0);
   }
   20% {
-    clip: rect(40px, 9999px, 62px, 0);
+    clip: rect(61px, 9999px, 46px, 0);
   }
   30% {
-    clip: rect(93px, 9999px, 34px, 0);
+    clip: rect(21px, 9999px, 5px, 0);
   }
   40% {
-    clip: rect(55px, 9999px, 17px, 0);
+    clip: rect(75px, 9999px, 35px, 0);
   }
   50% {
-    clip: rect(21px, 9999px, 74px, 0);
+    clip: rect(3px, 9999px, 45px, 0);
   }
   60% {
-    clip: rect(75px, 9999px, 50px, 0);
+    clip: rect(9px, 9999px, 79px, 0);
   }
   70% {
-    clip: rect(38px, 9999px, 68px, 0);
+    clip: rect(62px, 9999px, 27px, 0);
   }
   80% {
-    clip: rect(25px, 9999px, 92px, 0);
+    clip: rect(22px, 9999px, 46px, 0);
   }
   90% {
-    clip: rect(35px, 9999px, 11px, 0);
+    clip: rect(42px, 9999px, 72px, 0);
   }
   100% {
-    clip: rect(88px, 9999px, 84px, 0);
+    clip: rect(27px, 9999px, 3px, 0);
   }
 }
 
