@@ -31,6 +31,22 @@
     <div id="cursor"></div>
     <div id="circle"></div>
     <div id="wrapper" draggable="true">
+      <div id="hamMenu" onclick="hamclick()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div id="nav">
+        <ul onclick="smooth()">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Exhibition Location</a></li>
+          <li><a href="#">Guest Book</a></li>
+          <li><a href="#">Look Book</a></li>
+          <li><a href="#">SHOP</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#star-wars">Concerned</a></li>
+        </ul>
+      </div>
       <div id="cont">
         <div class="pg01" id="mainPage">
           <div class="leftSide" id="contents">
@@ -51,7 +67,7 @@
           </div>
         </div>
         <div class="pg02" id="mainPage">
-          <div class="leftSide" id="contents">exhibition Location</div>
+          <div class="leftSide" id="contents"> </div>
           <div class="rightSide" id="contents">
             <div id="chatWrap">
               <div id="chatForm">
@@ -65,13 +81,13 @@
           </div>
         </div>
         <div class="pg03" id="mainPage">
-          <div class="leftSide" id="contents">3-1</div>
-          <div class="rightSide" id="contents">3-2</div>
+          <div class="leftSide" id="contents"></div>
+          <div class="rightSide" id="contents"></div>
         </div>
         <div class="pg04" id="mainPage">
-          <div class="leftSide" id="contents">Contact</div>
+          <div class="leftSide" id="contents"></div>
           <div class="rightSide" id="contents">
-            <section class="star-wars">
+            <div id="star-wars">
               <div class="sub">
                 <div class="title">
                   <p>MMH UNTITLED EMOTION PROJECT</p>
@@ -102,7 +118,7 @@
                   <p></p>NULL
                 </div>
               </div>
-            </section>
+            </div>
           </div>
         </div>
       </div>
@@ -177,7 +193,11 @@
     </div>
   </body>
   <script>
-    document.cookie = 'same-site-cookie=foo; SameSite=Lax';
+    window.onkeydown = function(e) {
+        if(event.keyCode == 116){
+            e.preventDefault();
+        }
+    }
     //loading
     function loading(){
         document.getElementById("loading").style.display = "none";
@@ -220,42 +240,58 @@
     //mousePointer End
     
     function start() {
-        const start = document.getElementById('start');
-        const title = document.getElementById('title');
-        const wrapper = document.getElementById('wrapper');
-        const subTitle = document.querySelector('.subTitle');
-        const pics = document.getElementById('pics');
+        const start = document.getElementById('start'),
+        title = document.getElementById('title'),
+        wrapper = document.getElementById('wrapper'),
+        subTitle = document.querySelector('.subTitle'),
+        pics = document.getElementById('pics'),
+        nav = document.getElementById('nav');
         title.style.transform="rotate(90deg) translate(0%, -160%)";
         title.style.color="#7effb8";
         title.style.right="0%"
         title.style.fontSize="24vh"
-        title.style.transitionDuration="2s";
+        title.style.transitionDuration="1.5s";
         title.classList.remove("glitching");
         subTitle.style. opacity="1"
         subTitle.style.fontSize="7vh"
         start.style.display="none"
         wrapper.style.overflowX="auto"
         pics.style.opacity="1";
+        nav.style.top="6%"
+        nav.style.transitionDuration="1s"
         scroll();
     }
-    
+    function smooth(){
+        wrapper.style.scrollBehavior="smooth"
+        setTimeout(scrollnone,10)
+    }
+    function scrollnone(){
+        wrapper.style.scrollBehavior="unset"
+    }
     //scroll start
     function scroll() {
+    const ham = document.getElementById('hamMenu');
     wrapper.addEventListener('mousewheel', function(e){
+        e.preventDefault();
+        nav.style.top = '-10%'
+        ham.style.transitionDuration="1s"
+        ham.style.top="6%"
         if(e.wheelDelta >= 0){
-            e.preventDefault();
             wrapper.scrollBy(-50, 0);
         }else if(e.wheelDelta < 0){
-            e.preventDefault();
             wrapper.scrollBy(50, 0);
         }})
     }//scroll end
-    
+    function hamclick(){
+        const ham = document.getElementById('hamMenu');
+        nav.style.top = '6%'
+        ham.style.top = '-10%'
+    }
     function rippleEffect() {
     const wave = document.querySelectorAll('[data-animation="ripple"]');
     [...wave].forEach(wrapper => {
     wrapper.onmousedown = function(e) {
-        const x = e.pageX - this.offsetLeft + wrapper.scrollLeft;
+        const x = e.pageX - this.offsetLeft;
         const y = e.pageY - this.offsetTop;
         const w = this.offsetWidth;
         const ripple = document.createElement('span');
@@ -280,6 +316,10 @@
         this.appendChild(ripple);
         this.appendChild(ripple2);
         this.appendChild(ripple3);
+    
+        if( (e.which == 2) ) {
+            e.preventDefault();
+        }
     
         setTimeout(() => {
         ripple.parentNode.removeChild(ripple);

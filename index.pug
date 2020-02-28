@@ -29,6 +29,26 @@ html(lang="en")
         #cursor
         #circle
         #wrapper(draggable="true")
+            #hamMenu(onclick="hamclick()")
+                div
+                div
+                div
+            #nav
+                ul(onclick="smooth()")
+                    li
+                        a(href="#") Home
+                    li
+                        a(href="#") Exhibition Location
+                    li
+                        a(href="#") Guest Book
+                    li
+                        a(href="#") Look Book
+                    li
+                        a(href="#") SHOP
+                    li
+                        a(href="#") Contact
+                    li
+                        a(href="#star-wars") Concerned
             #cont
                 #mainPage.pg01
                     #contents.leftSide
@@ -46,7 +66,7 @@ html(lang="en")
                         #title.glitching(data-text="MOMOHA") MOMOHA
                         .subTitle ももは。<!--モモバ。-->
                 #mainPage.pg02
-                    #contents.leftSide exhibition Location
+                    #contents.leftSide 
                     #contents.rightSide
                         #chatWrap
                             #chatForm
@@ -55,12 +75,12 @@ html(lang="en")
                                     input#valin(type="text" onkeydown="if(event.keyCode==13){get_list()}" autocomplete="off" spellcheck="false" placeholder="Spread an opinion")
                                     button#submit(onclick="get_list()") Send
                 #mainPage.pg03
-                    #contents.leftSide 3-1
-                    #contents.rightSide 3-2
-                #mainPage.pg04
-                    #contents.leftSide Contact
+                    #contents.leftSide
                     #contents.rightSide
-                        section.star-wars
+                #mainPage.pg04
+                    #contents.leftSide
+                    #contents.rightSide
+                        #star-wars
                             .sub
                                 .title
                                     p MMH UNTITLED EMOTION PROJECT
@@ -152,7 +172,11 @@ html(lang="en")
                         div
                         div
     script.
-        document.cookie = 'same-site-cookie=foo; SameSite=Lax';
+        window.onkeydown = function(e) {
+            if(event.keyCode == 116){
+                e.preventDefault();
+            }
+        }
         //loading
         function loading(){
             document.getElementById("loading").style.display = "none";
@@ -195,42 +219,58 @@ html(lang="en")
         //mousePointer End
 
         function start() {
-            const start = document.getElementById('start');
-            const title = document.getElementById('title');
-            const wrapper = document.getElementById('wrapper');
-            const subTitle = document.querySelector('.subTitle');
-            const pics = document.getElementById('pics');
+            const start = document.getElementById('start'),
+            title = document.getElementById('title'),
+            wrapper = document.getElementById('wrapper'),
+            subTitle = document.querySelector('.subTitle'),
+            pics = document.getElementById('pics'),
+            nav = document.getElementById('nav');
             title.style.transform="rotate(90deg) translate(0%, -160%)";
             title.style.color="#7effb8";
             title.style.right="0%"
             title.style.fontSize="24vh"
-            title.style.transitionDuration="2s";
+            title.style.transitionDuration="1.5s";
             title.classList.remove("glitching");
             subTitle.style. opacity="1"
             subTitle.style.fontSize="7vh"
             start.style.display="none"
             wrapper.style.overflowX="auto"
             pics.style.opacity="1";
+            nav.style.top="6%"
+            nav.style.transitionDuration="1s"
             scroll();
         }
-
+        function smooth(){
+            wrapper.style.scrollBehavior="smooth"
+            setTimeout(scrollnone,10)
+        }
+        function scrollnone(){
+            wrapper.style.scrollBehavior="unset"
+        }
         //scroll start
         function scroll() {
+        const ham = document.getElementById('hamMenu');
         wrapper.addEventListener('mousewheel', function(e){
+            e.preventDefault();
+            nav.style.top = '-10%'
+            ham.style.transitionDuration="1s"
+            ham.style.top="6%"
             if(e.wheelDelta >= 0){
-                e.preventDefault();
                 wrapper.scrollBy(-50, 0);
             }else if(e.wheelDelta < 0){
-                e.preventDefault();
                 wrapper.scrollBy(50, 0);
             }})
         }//scroll end
-
+        function hamclick(){
+            const ham = document.getElementById('hamMenu');
+            nav.style.top = '6%'
+            ham.style.top = '-10%'
+        }
         function rippleEffect() {
         const wave = document.querySelectorAll('[data-animation="ripple"]');
         [...wave].forEach(wrapper => {
         wrapper.onmousedown = function(e) {
-            const x = e.pageX - this.offsetLeft + wrapper.scrollLeft;
+            const x = e.pageX - this.offsetLeft;
             const y = e.pageY - this.offsetTop;
             const w = this.offsetWidth;
             const ripple = document.createElement('span');
@@ -255,6 +295,10 @@ html(lang="en")
             this.appendChild(ripple);
             this.appendChild(ripple2);
             this.appendChild(ripple3);
+
+            if( (e.which == 2) ) {
+                e.preventDefault();
+            }
 
             setTimeout(() => {
             ripple.parentNode.removeChild(ripple);
