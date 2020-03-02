@@ -313,16 +313,7 @@ html(lang="en")
         })
         }
         //chat function start
-        //locate start
-        async function fetchDataAsync() {
-        const response = await fetch('http://ip-api.com/json');
-        const localInfo = await response.json();
-        const localPrint = `Visitor from ${localInfo.city}, ${localInfo.regionName}`;
-        const localCity = document.getElementById('local')
-        localCity.innerHTML = localPrint
-        }//locate start
-
-        function get_list(c){
+        function get_list(){
                 const input = document.getElementById("valin").value;
                 if(input.length == 0){
                     //do nothing
@@ -347,7 +338,8 @@ html(lang="en")
                     document.getElementById("valin").value = "";
                 }
                 inlist.scrollTop = inlist.scrollHeight;
-            }//chat function end
+            }//get_list
+            //chat function end
         function starwars(){
             const sub02 = document.querySelector('.sub02');
             sub02.style.animation = "crawl 30s linear infinite"
