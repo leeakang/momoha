@@ -354,6 +354,9 @@
                     document.getElementById("talkbox").appendChild(listplus);
                     document.getElementById("talkbox").appendChild(localDiv);
                     localDiv.innerHTML = localPrint
+                    localStorage.setItem('inlist',inlist.innerHTML);
+                    const save = localStorage.getItem('inlist');
+                    console.log(save);
                 }
                 fetchDataAsync();
                 document.getElementById("valin").value = "";
