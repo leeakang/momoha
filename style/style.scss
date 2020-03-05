@@ -437,6 +437,24 @@ html, body{
                 }//chatWrap
             }//pg02.rightSide
         }//pg02
+        .pg03{
+            .rightSide{
+                white-space: normal;
+                overflow:auto;
+                .mmhacc{
+                    height:100%;
+                    overflow:auto;
+                    img{
+                        transition-duration: .3s;
+                        width:35vh;
+                        margin:2vh;
+                        &:hover{
+                            transform:scale(1.05);
+                        }
+                    }
+                }
+            }
+        }
         .pg04{
             .rightSide{
                 #star-wars {
