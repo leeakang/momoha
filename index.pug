@@ -77,7 +77,7 @@ html(lang="en")
                 #mainPage.pg03
                     .contents.leftSide
                     .contents.rightSide
-                        .mmhacc
+                        #mmhacc
                             img(src="../images/acc02.jpeg" alt='momoha_acc_01')
                             img(src="../images/acc03.jpeg" alt='momoha_acc_02')
                             img(src="../images/acc04.jpeg" alt='momoha_acc_03')
@@ -250,6 +250,7 @@ html(lang="en")
             nav.style.transitionDuration="1s"
             scroll();
             drag();
+            picdrag();
         }
         function scrollnone(){
             wrapper.style.scrollBehavior="unset"
@@ -268,6 +269,35 @@ html(lang="en")
                 wrapper.scrollBy(50, 0);
             }})
         }//scroll end
+        //drag to slide start
+        function drag(){
+            let isDown = false;
+            let startX;
+            let scrollLeft;
+            wrapper.addEventListener('mousedown', (e) => {
+            isDown = true;
+            startX = e.pageX - wrapper.offsetLeft;
+            scrollLeft = wrapper.scrollLeft;
+            });
+            wrapper.addEventListener('mouseleave', () => {
+            isDown = false;
+            });
+            wrapper.addEventListener('mouseup', () => {
+            isDown = false;
+            });
+            wrapper.addEventListener('mousemove', (e) => {
+            if(!isDown) return;
+            e.preventDefault();
+            ham.style.top = '6%'
+            ham.style.transitionDuration = "1s"
+            nav.style.top = '-10%'
+            cont.style.opacity = "1"
+            const x = e.pageX - wrapper.offsetLeft;
+            const walk = (x - startX) * 2; //scroll-fast
+            wrapper.scrollLeft = scrollLeft - walk;
+            });
+            }
+        //drag to slide end
         function hamclick(){
             nav.style.top = '6%'
             ham.style.top = '-10%'
@@ -342,7 +372,10 @@ html(lang="en")
                         document.getElementById("inlist").appendChild(talkbox);
                         document.getElementById("talkbox").appendChild(listplus);
                         document.getElementById("talkbox").appendChild(localDiv);
-                        localDiv.innerHTML = localPrint
+                        localDiv.innerHTML = localPrint;
+                        localStorage.setItem('inlist',inlist.innerHTML);
+                        const test = localStorage.getItem('inlist');
+                        console.log(test)
                     }
                     fetchDataAsync();
                     document.getElementById("valin").value = "";
@@ -355,33 +388,27 @@ html(lang="en")
             sub02.style.animation = "crawl 30s linear infinite"
         }
         setTimeout(starwars, 15000);
-
-        //drag to slide start
-        function drag(){
+        function picdrag(){
+            let mmhacc = document.getElementById('mmhacc')
             let isDown = false;
-            let startX;
+            let startY;
             let scrollLeft;
-            wrapper.addEventListener('mousedown', (e) => {
+            mmhacc.addEventListener('mousedown', (e) => {
             isDown = true;
-            startX = e.pageX - wrapper.offsetLeft;
-            scrollLeft = wrapper.scrollLeft;
+            startY = e.pageY - mmhacc.offsetHeight;
+            scrollTop = mmhacc.scrollTop;
             });
-            wrapper.addEventListener('mouseleave', () => {
+            mmhacc.addEventListener('mouseleave', () => {
             isDown = false;
             });
-            wrapper.addEventListener('mouseup', () => {
+            mmhacc.addEventListener('mouseup', () => {
             isDown = false;
             });
-            wrapper.addEventListener('mousemove', (e) => {
+            mmhacc.addEventListener('mousemove', (e) => {
             if(!isDown) return;
             e.preventDefault();
-            ham.style.top = '6%'
-            ham.style.transitionDuration = "1s"
-            nav.style.top = '-10%'
-            cont.style.opacity = "1"
-            const x = e.pageX - wrapper.offsetLeft;
-            const walk = (x - startX) * 2; //scroll-fast
-            wrapper.scrollLeft = scrollLeft - walk;
+            const y = e.pageY - mmhacc.offsetHeight;
+            const walk = (y - startY) * 2; //scroll-fast
+            mmhacc.scrollTop = scrollTop - walk;
             });
             }
-        //drag to slide end
