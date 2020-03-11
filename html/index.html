@@ -195,6 +195,7 @@
     </div>
   </body>
   <script>
+    document.cookie = "safeCookie1=foo; Samesite=none; Secure";
     window.onkeydown = function(e) {
         if(event.keyCode == 116){
             e.preventDefault();
