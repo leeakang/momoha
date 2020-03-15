@@ -88,6 +88,33 @@ html(lang="en")
                             img(src="../images/acc09.jpeg" alt='momoha_acc_08')
                 #mainPage.pg04
                     .contents.leftSide
+                        #contact
+                            .SNS
+                                div Contact
+                                div instagram
+                                div mnemkr
+                            .contactWrapper
+                                form(class="gform", name="email", target="sendiframe", method="post", action="https://script.google.com/macros/s/AKfycbweZZmOWMDwhk2En18zcvjw9slRL5tj7bnpbkNK/exec", onsubmit="thankyou()")
+                                    p 이름 (Name)
+                                        br
+                                        input.short(type="text", autocomplete="off", name="name", placeholder="성명, 기업명", required)  
+                                    p 연락처 (Call)
+                                        br
+                                        input.short(type="text", autocomplete="off", name="call", placeholder="휴대폰, 유선전화", required) 
+                                    p 이메일 (E-mail)
+                                        br
+                                        input.short(type="email", autocomplete="off", name="email", placeholder="email@company.com", required)
+                                    p 남기실 말씀 (Message)
+                                        br
+                                        textarea(type="text", autocomplete="off", name="message")
+                                    button(type="submit", class="send") Send
+                                    iframe(name="sendiframe", style="display:none;", frameborder="0")
+                            .thankyou
+                                p.kor 전송되었습니다. 소중한 의견 감사합니다.
+                                p.eng Success. Thanks for contacting.
+                                p.confirm
+                                    a(onclick="closeAlert()") 확인 
+                                        span.timer
                     .contents.rightSide#subs
                         #star-wars
                             .sub
@@ -123,7 +150,7 @@ html(lang="en")
                                     p
                                     | KWAK JIN WON
                                     p
-                                    | NULL
+                                    | KIM MIN SUNG
                                     p
                                     | NULL
                                     p
@@ -412,3 +439,16 @@ html(lang="en")
             mmhacc.scrollTop = scrollTop - walk;
             });
             }
+
+            //contact script start
+            var str = document.getElementById("textarea").value;
+            str = str.replace(/(?:\\r\n|\r|\n)/g, '<br />');
+            //enter to br
+        function thankyou() {
+            let contInput = document.querySelector('.short'),
+            inpuText = contInput.innterHTML;
+            alert('전송되었습니다. 감사합니다.')
+            var clearInput = document.getElementById("textarea").innerHTML;
+            clearInput = ''
+        }
+        //contact script end

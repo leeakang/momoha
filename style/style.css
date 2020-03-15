@@ -566,6 +566,15 @@ html, body {
   overflow: auto;
 }
 
+#wrapper #cont .pg03 .rightSide #mmhacc::-webkit-scrollbar {
+  background: rgba(0, 0, 0, 0);
+  width: 7px;
+}
+
+#wrapper #cont .pg03 .rightSide #mmhacc::-webkit-scrollbar-thumb {
+  background: #7effb8;
+}
+
 #wrapper #cont .pg03 .rightSide #mmhacc img {
   -webkit-transition-duration: .3s;
           transition-duration: .3s;
@@ -576,6 +585,108 @@ html, body {
 #wrapper #cont .pg03 .rightSide #mmhacc img:hover {
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
+}
+
+#wrapper #cont .pg04 .leftSide #contact {
+  padding: 5vh;
+}
+
+#wrapper #cont .pg04 .leftSide #contact .SNS {
+  width: 100%;
+  height: auto;
+}
+
+#wrapper #cont .pg04 .leftSide #contact .contactWrapper {
+  width: 100%;
+}
+
+#wrapper #cont .pg04 .leftSide #contact .contactWrapper form {
+  width: 100%;
+}
+
+#wrapper #cont .pg04 .leftSide #contact .contactWrapper form p {
+  font-size: 2.5vh;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+#wrapper #cont .pg04 .leftSide #contact .contactWrapper form .short {
+  height: 30px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-left: 5px;
+}
+
+#wrapper #cont .pg04 .leftSide #contact .contactWrapper form textarea {
+  width: 100%;
+  height: 100px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 5px;
+}
+
+#wrapper #cont .pg04 .leftSide #contact .contactWrapper form .send {
+  width: 15vh;
+  height: 7vh;
+  font-size: 2.5vh;
+  font-weight: bold;
+  border: 0;
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+  float: right;
+  cursor: pointer;
+}
+
+#wrapper #cont .pg04 .leftSide #contact .contactWrapper form .send:hover {
+  color: #fff;
+}
+
+#wrapper #cont .pg04 .leftSide #contact .contactWrapper form input {
+  width: 50%;
+  border: none;
+}
+
+#wrapper #cont .pg04 .leftSide #contact .thankyou {
+  opacity: 0;
+  z-index: -1;
+  width: 500px;
+  height: 300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+  text-align: center;
+  background: black;
+  border-radius: 10px;
+  color: #fff;
+  padding-top: 100px;
+}
+
+#wrapper #cont .pg04 .leftSide #contact .thankyou .kor {
+  font-size: 20px;
+}
+
+#wrapper #cont .pg04 .leftSide #contact .thankyou .confirm {
+  font-size: 20px;
+}
+
+#wrapper #cont .pg04 .leftSide #contact .thankyou .confirm a {
+  color: #fff;
+  border: 1px solid #fff;
+  position: absolute;
+  -webkit-transform: translate(-50%, 60%);
+          transform: translate(-50%, 60%);
+  padding: 20px 40px;
+  border-radius: 5px;
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+}
+
+#wrapper #cont .pg04 .leftSide #contact .thankyou .confirm a:hover {
+  background: #fff;
 }
 
 #wrapper #cont .pg04 .rightSide #star-wars {
@@ -671,73 +782,73 @@ html, body {
 
 @-webkit-keyframes noise-anim {
   0% {
-    clip: rect(35px, 9999px, 46px, 0);
+    clip: rect(14px, 9999px, 69px, 0);
   }
   10% {
-    clip: rect(67px, 9999px, 94px, 0);
+    clip: rect(19px, 9999px, 69px, 0);
   }
   20% {
-    clip: rect(3px, 9999px, 70px, 0);
+    clip: rect(33px, 9999px, 33px, 0);
   }
   30% {
-    clip: rect(95px, 9999px, 45px, 0);
+    clip: rect(18px, 9999px, 14px, 0);
   }
   40% {
-    clip: rect(10px, 9999px, 51px, 0);
+    clip: rect(1px, 9999px, 51px, 0);
   }
   50% {
-    clip: rect(26px, 9999px, 39px, 0);
+    clip: rect(22px, 9999px, 65px, 0);
   }
   60% {
-    clip: rect(33px, 9999px, 66px, 0);
+    clip: rect(35px, 9999px, 5px, 0);
   }
   70% {
-    clip: rect(46px, 9999px, 98px, 0);
+    clip: rect(19px, 9999px, 89px, 0);
   }
   80% {
-    clip: rect(92px, 9999px, 96px, 0);
+    clip: rect(92px, 9999px, 5px, 0);
   }
   90% {
-    clip: rect(51px, 9999px, 61px, 0);
+    clip: rect(3px, 9999px, 47px, 0);
   }
   100% {
-    clip: rect(94px, 9999px, 7px, 0);
+    clip: rect(21px, 9999px, 83px, 0);
   }
 }
 
 @keyframes noise-anim {
   0% {
-    clip: rect(35px, 9999px, 46px, 0);
+    clip: rect(14px, 9999px, 69px, 0);
   }
   10% {
-    clip: rect(67px, 9999px, 94px, 0);
+    clip: rect(19px, 9999px, 69px, 0);
   }
   20% {
-    clip: rect(3px, 9999px, 70px, 0);
+    clip: rect(33px, 9999px, 33px, 0);
   }
   30% {
-    clip: rect(95px, 9999px, 45px, 0);
+    clip: rect(18px, 9999px, 14px, 0);
   }
   40% {
-    clip: rect(10px, 9999px, 51px, 0);
+    clip: rect(1px, 9999px, 51px, 0);
   }
   50% {
-    clip: rect(26px, 9999px, 39px, 0);
+    clip: rect(22px, 9999px, 65px, 0);
   }
   60% {
-    clip: rect(33px, 9999px, 66px, 0);
+    clip: rect(35px, 9999px, 5px, 0);
   }
   70% {
-    clip: rect(46px, 9999px, 98px, 0);
+    clip: rect(19px, 9999px, 89px, 0);
   }
   80% {
-    clip: rect(92px, 9999px, 96px, 0);
+    clip: rect(92px, 9999px, 5px, 0);
   }
   90% {
-    clip: rect(51px, 9999px, 61px, 0);
+    clip: rect(3px, 9999px, 47px, 0);
   }
   100% {
-    clip: rect(94px, 9999px, 7px, 0);
+    clip: rect(21px, 9999px, 83px, 0);
   }
 }
 

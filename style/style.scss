@@ -444,6 +444,13 @@ html, body{
                 #mmhacc{
                     height:100%;
                     overflow:auto;
+                    &::-webkit-scrollbar{
+                        background:rgba(0,0,0,0);
+                        width:7px;
+                    }
+                    &::-webkit-scrollbar-thumb {
+                        background:rgba(126, 255, 184, 1);
+                    }
                     img{
                         transition-duration: .3s;
                         width:35vh;
@@ -456,6 +463,90 @@ html, body{
             }
         }
         .pg04{
+            .leftSide{
+                #contact{
+                    padding:5vh;
+                    .SNS{
+                        width:100%;
+                        height:auto;
+                    }
+                    .contactWrapper{
+                        width:100%;
+                        form{
+                            width:100%;
+                            p{
+                                font-size:2.5vh;
+                                margin-bottom:10px;
+                                font-weight:bold;
+                            }//p
+                            .short{
+                                height:30px;
+                                margin-top:10px;
+                                margin-bottom:10px;
+                                padding-left:5px;
+                            }
+                            textarea{
+                                width:100%;
+                                height:100px;
+                                margin-top:10px;
+                                margin-bottom:10px;
+                                padding:5px;
+                            }
+                            .send{
+                                width:15vh;
+                                height:7vh;
+                                font-size:2.5vh;
+                                font-weight:bold;
+                                border:0;
+                                transition-duration: 0.3s;
+                                float:right;
+                                cursor: pointer;
+                                &:hover{
+                                    color:#fff;
+                                }
+                            }
+                            input{
+                                width:50%;
+                                border:none;
+                            }//input
+                        }//form
+                    }//contactWrapper
+                    .thankyou{
+                        opacity:0;
+                        z-index:-1;
+                        width:500px;
+                        height:300px;
+                        position:absolute;
+                        top:50%;
+                        left:50%;
+                        transform:translate(-50%,-50%);
+                        transition-duration: 0.3s;
+                        text-align:center;
+                        background:black;
+                        border-radius:10px;
+                        color:#fff;
+                        padding-top:100px;
+                        .kor{
+                            font-size:20px;
+                        }
+                        .confirm{
+                            font-size:20px;
+                            a{
+                                color:#fff;
+                                border:1px solid #fff;
+                                position:absolute;
+                                transform:translate(-50%, 60%);
+                                padding:20px 40px;
+                                border-radius:5px;
+                                transition-duration: 0.3s;
+                                &:hover{
+                                    background:#fff;
+                                }
+                            }//a
+                        }//confirm
+                    }//thankyou
+                }
+            }
             .rightSide{
                 #star-wars {
                     display: flex;
