@@ -568,7 +568,7 @@ html, body {
 
 #wrapper #cont .pg03 .rightSide #mmhacc::-webkit-scrollbar {
   background: rgba(0, 0, 0, 0);
-  width: 7px;
+  width: 4px;
 }
 
 #wrapper #cont .pg03 .rightSide #mmhacc::-webkit-scrollbar-thumb {
@@ -583,17 +583,44 @@ html, body {
 }
 
 #wrapper #cont .pg03 .rightSide #mmhacc img:hover {
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
+  -webkit-transform: scale(1.03);
+          transform: scale(1.03);
 }
 
 #wrapper #cont .pg04 .leftSide #contact {
   padding: 5vh;
+  color: #7effb8;
 }
 
 #wrapper #cont .pg04 .leftSide #contact .SNS {
   width: 100%;
   height: auto;
+  margin-bottom: 10vh;
+}
+
+#wrapper #cont .pg04 .leftSide #contact .SNS .contact p {
+  width: 100%;
+  font-size: 3vh;
+  font-weight: bold;
+  margin-bottom: 3vh;
+}
+
+#wrapper #cont .pg04 .leftSide #contact .SNS .contact div {
+  display: inline-block;
+}
+
+#wrapper #cont .pg04 .leftSide #contact .SNS .contact div img {
+  -webkit-transition-duration: .3s;
+          transition-duration: .3s;
+}
+
+#wrapper #cont .pg04 .leftSide #contact .SNS .contact div img:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+#wrapper #cont .pg04 .leftSide #contact .SNS .contact div img:first-child {
+  margin-right: 3vh;
 }
 
 #wrapper #cont .pg04 .leftSide #contact .contactWrapper {
@@ -606,15 +633,42 @@ html, body {
 
 #wrapper #cont .pg04 .leftSide #contact .contactWrapper form p {
   font-size: 2.5vh;
-  margin-bottom: 10px;
+  margin-bottom: 3vh;
   font-weight: bold;
 }
 
-#wrapper #cont .pg04 .leftSide #contact .contactWrapper form .short {
-  height: 30px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  padding-left: 5px;
+#wrapper #cont .pg04 .leftSide #contact .contactWrapper form p input {
+  height: 3.5vh;
+  margin-top: .5vh;
+  margin-bottom: .5vh;
+  padding-left: .5vh;
+  border-bottom: 2px solid #7effb8;
+  background: none;
+  color: #fff;
+}
+
+#wrapper #cont .pg04 .leftSide #contact .contactWrapper form p input:focus {
+  border-bottom: 2px solid #fff;
+}
+
+#wrapper #cont .pg04 .leftSide #contact .contactWrapper form p input::-webkit-input-placeholder {
+  color: #7effb8;
+  opacity: .5;
+}
+
+#wrapper #cont .pg04 .leftSide #contact .contactWrapper form p input:-ms-input-placeholder {
+  color: #7effb8;
+  opacity: .5;
+}
+
+#wrapper #cont .pg04 .leftSide #contact .contactWrapper form p input::-ms-input-placeholder {
+  color: #7effb8;
+  opacity: .5;
+}
+
+#wrapper #cont .pg04 .leftSide #contact .contactWrapper form p input::placeholder {
+  color: #7effb8;
+  opacity: .5;
 }
 
 #wrapper #cont .pg04 .leftSide #contact .contactWrapper form textarea {
@@ -623,6 +677,10 @@ html, body {
   margin-top: 10px;
   margin-bottom: 10px;
   padding: 5px;
+  resize: none;
+  border: 3px solid #7effb8;
+  background: none;
+  color: #fff;
 }
 
 #wrapper #cont .pg04 .leftSide #contact .contactWrapper form .send {
@@ -634,6 +692,8 @@ html, body {
   -webkit-transition-duration: 0.3s;
           transition-duration: 0.3s;
   float: right;
+  background: #7effb8;
+  color: #2743c0;
   cursor: pointer;
 }
 
@@ -647,8 +707,7 @@ html, body {
 }
 
 #wrapper #cont .pg04 .leftSide #contact .thankyou {
-  opacity: 0;
-  z-index: -1;
+  z-index: 99;
   width: 500px;
   height: 300px;
   position: absolute;
@@ -659,10 +718,11 @@ html, body {
   -webkit-transition-duration: 0.3s;
           transition-duration: 0.3s;
   text-align: center;
-  background: black;
+  background: gray;
   border-radius: 10px;
   color: #fff;
   padding-top: 100px;
+  display: none;
 }
 
 #wrapper #cont .pg04 .leftSide #contact .thankyou .kor {
@@ -782,73 +842,73 @@ html, body {
 
 @-webkit-keyframes noise-anim {
   0% {
-    clip: rect(14px, 9999px, 69px, 0);
+    clip: rect(9px, 9999px, 54px, 0);
   }
   10% {
-    clip: rect(19px, 9999px, 69px, 0);
+    clip: rect(80px, 9999px, 2px, 0);
   }
   20% {
-    clip: rect(33px, 9999px, 33px, 0);
+    clip: rect(27px, 9999px, 100px, 0);
   }
   30% {
-    clip: rect(18px, 9999px, 14px, 0);
+    clip: rect(81px, 9999px, 67px, 0);
   }
   40% {
-    clip: rect(1px, 9999px, 51px, 0);
+    clip: rect(71px, 9999px, 65px, 0);
   }
   50% {
-    clip: rect(22px, 9999px, 65px, 0);
+    clip: rect(11px, 9999px, 12px, 0);
   }
   60% {
-    clip: rect(35px, 9999px, 5px, 0);
+    clip: rect(46px, 9999px, 36px, 0);
   }
   70% {
-    clip: rect(19px, 9999px, 89px, 0);
+    clip: rect(66px, 9999px, 29px, 0);
   }
   80% {
-    clip: rect(92px, 9999px, 5px, 0);
+    clip: rect(63px, 9999px, 25px, 0);
   }
   90% {
-    clip: rect(3px, 9999px, 47px, 0);
+    clip: rect(99px, 9999px, 46px, 0);
   }
   100% {
-    clip: rect(21px, 9999px, 83px, 0);
+    clip: rect(93px, 9999px, 31px, 0);
   }
 }
 
 @keyframes noise-anim {
   0% {
-    clip: rect(14px, 9999px, 69px, 0);
+    clip: rect(9px, 9999px, 54px, 0);
   }
   10% {
-    clip: rect(19px, 9999px, 69px, 0);
+    clip: rect(80px, 9999px, 2px, 0);
   }
   20% {
-    clip: rect(33px, 9999px, 33px, 0);
+    clip: rect(27px, 9999px, 100px, 0);
   }
   30% {
-    clip: rect(18px, 9999px, 14px, 0);
+    clip: rect(81px, 9999px, 67px, 0);
   }
   40% {
-    clip: rect(1px, 9999px, 51px, 0);
+    clip: rect(71px, 9999px, 65px, 0);
   }
   50% {
-    clip: rect(22px, 9999px, 65px, 0);
+    clip: rect(11px, 9999px, 12px, 0);
   }
   60% {
-    clip: rect(35px, 9999px, 5px, 0);
+    clip: rect(46px, 9999px, 36px, 0);
   }
   70% {
-    clip: rect(19px, 9999px, 89px, 0);
+    clip: rect(66px, 9999px, 29px, 0);
   }
   80% {
-    clip: rect(92px, 9999px, 5px, 0);
+    clip: rect(63px, 9999px, 25px, 0);
   }
   90% {
-    clip: rect(3px, 9999px, 47px, 0);
+    clip: rect(99px, 9999px, 46px, 0);
   }
   100% {
-    clip: rect(21px, 9999px, 83px, 0);
+    clip: rect(93px, 9999px, 31px, 0);
   }
 }
 

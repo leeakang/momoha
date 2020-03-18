@@ -90,23 +90,28 @@ html(lang="en")
                     .contents.leftSide
                         #contact
                             .SNS
-                                div Contact
-                                div instagram
-                                div mnemkr
+                                div.contact
+                                    p Contact link for business&chill
+                                    div.igLogo
+                                        a(href="https://www.instagram.com/momoha_acc/?hl=ko" target="_blank")
+                                            img(src='../images/igLogo.png')
+                                    div.mnemLogo
+                                        a(href="http://mnem.co.kr/" target="_blank")
+                                            img(src='../images/mnemLogo.png')
                             .contactWrapper
-                                form(class="gform", name="email", target="sendiframe", method="post", action="https://script.google.com/macros/s/AKfycbweZZmOWMDwhk2En18zcvjw9slRL5tj7bnpbkNK/exec", onsubmit="thankyou()")
+                                form(spellcheck="false" class="gform", name="email", target="sendiframe", method="post", action="https://script.google.com/macros/s/AKfycbweZZmOWMDwhk2En18zcvjw9slRL5tj7bnpbkNK/exec", onsubmit="thankyou()")
                                     p 이름 (Name)
                                         br
-                                        input.short(type="text", autocomplete="off", name="name", placeholder="성명, 기업명", required)  
+                                        input.name(type="text", autocomplete="off", name="name", placeholder="성명, 기업명", required)
                                     p 연락처 (Call)
                                         br
-                                        input.short(type="text", autocomplete="off", name="call", placeholder="휴대폰, 유선전화", required) 
+                                        input.call(type="text", autocomplete="off", name="call", placeholder="휴대폰, 유선전화", required) 
                                     p 이메일 (E-mail)
                                         br
-                                        input.short(type="email", autocomplete="off", name="email", placeholder="email@company.com", required)
+                                        input.email(type="email", autocomplete="off", name="email", placeholder="email@company.com", required)
                                     p 남기실 말씀 (Message)
                                         br
-                                        textarea(type="text", autocomplete="off", name="message")
+                                        textarea#textarea(type="text", autocomplete="off", name="message")
                                     button(type="submit", class="send") Send
                                     iframe(name="sendiframe", style="display:none;", frameborder="0")
                             .thankyou
@@ -445,10 +450,10 @@ html(lang="en")
             str = str.replace(/(?:\\r\n|\r|\n)/g, '<br />');
             //enter to br
         function thankyou() {
-            let contInput = document.querySelector('.short'),
-            inpuText = contInput.innterHTML;
-            alert('전송되었습니다. 감사합니다.')
-            var clearInput = document.getElementById("textarea").innerHTML;
-            clearInput = ''
+            document.querySelector(".name").value = null;
+            document.querySelector(".call").value = null;
+            document.querySelector(".email").value = null;
+            document.getElementById("textarea").value = null;
+            alert('전송되었습니다. 감사합니다.');
         }
         //contact script end

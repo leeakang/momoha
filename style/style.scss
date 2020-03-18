@@ -446,7 +446,7 @@ html, body{
                     overflow:auto;
                     &::-webkit-scrollbar{
                         background:rgba(0,0,0,0);
-                        width:7px;
+                        width:4px;
                     }
                     &::-webkit-scrollbar-thumb {
                         background:rgba(126, 255, 184, 1);
@@ -456,7 +456,7 @@ html, body{
                         width:35vh;
                         margin:2vh;
                         &:hover{
-                            transform:scale(1.05);
+                            transform:scale(1.03);
                         }
                     }
                 }
@@ -466,9 +466,31 @@ html, body{
             .leftSide{
                 #contact{
                     padding:5vh;
+                    color:$colorPT;
                     .SNS{
                         width:100%;
                         height:auto;
+                        margin-bottom:10vh;
+                        .contact{
+                            p{
+                            width:100%;
+                            font-size:3vh;
+                            font-weight:bold;
+                            margin-bottom:3vh;
+                            }
+                            div{
+                                display:inline-block;
+                                img{
+                                    transition-duration: .3s;
+                                    &:hover{
+                                        transform: scale(1.05);
+                                    }
+                                    &:first-child{
+                                        margin-right:3vh;
+                                    }
+                                }
+                            }
+                        }
                     }
                     .contactWrapper{
                         width:100%;
@@ -476,21 +498,35 @@ html, body{
                             width:100%;
                             p{
                                 font-size:2.5vh;
-                                margin-bottom:10px;
+                                margin-bottom:3vh;
                                 font-weight:bold;
+                                input{
+                                    height:3.5vh;
+                                    margin-top:.5vh;
+                                    margin-bottom:.5vh;
+                                    padding-left:.5vh;
+                                    border-bottom:2px solid $colorPT;
+                                    background:none;
+                                    color:#fff;
+                                    &:focus{
+                                        border-bottom:2px solid #fff;
+                                    }
+                                    &::placeholder{
+                                        color:$colorPT;
+                                        opacity: .5;
+                                    }
+                                }
                             }//p
-                            .short{
-                                height:30px;
-                                margin-top:10px;
-                                margin-bottom:10px;
-                                padding-left:5px;
-                            }
                             textarea{
                                 width:100%;
                                 height:100px;
                                 margin-top:10px;
                                 margin-bottom:10px;
                                 padding:5px;
+                                resize: none;
+                                border:3px solid $colorPT;
+                                background:none;
+                                color:#fff;
                             }
                             .send{
                                 width:15vh;
@@ -500,6 +536,8 @@ html, body{
                                 border:0;
                                 transition-duration: 0.3s;
                                 float:right;
+                                background:$colorPT;
+                                color:$colorBG;
                                 cursor: pointer;
                                 &:hover{
                                     color:#fff;
@@ -512,8 +550,7 @@ html, body{
                         }//form
                     }//contactWrapper
                     .thankyou{
-                        opacity:0;
-                        z-index:-1;
+                        z-index:99;
                         width:500px;
                         height:300px;
                         position:absolute;
@@ -522,10 +559,11 @@ html, body{
                         transform:translate(-50%,-50%);
                         transition-duration: 0.3s;
                         text-align:center;
-                        background:black;
+                        background:gray;
                         border-radius:10px;
                         color:#fff;
                         padding-top:100px;
+                        display:none;
                         .kor{
                             font-size:20px;
                         }

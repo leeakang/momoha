@@ -90,23 +90,25 @@
           <div class="contents leftSide">
             <div id="contact">
               <div class="SNS">
-                <div>Contact</div>
-                <div>instagram</div>
-                <div>mnemkr</div>
+                <div class="contact">
+                  <p>Contact link for business&chill</p>
+                  <div class="igLogo"><a href="https://www.instagram.com/momoha_acc/?hl=ko" target="_blank"><img src="../images/igLogo.png"/></a></div>
+                  <div class="mnemLogo"><a href="http://mnem.co.kr/" target="_blank"><img src="../images/mnemLogo.png"/></a></div>
+                </div>
               </div>
               <div class="contactWrapper">
-                <form class="gform" name="email" target="sendiframe" method="post" action="https://script.google.com/macros/s/AKfycbweZZmOWMDwhk2En18zcvjw9slRL5tj7bnpbkNK/exec" onsubmit="thankyou()">
+                <form class="gform" spellcheck="false" name="email" target="sendiframe" method="post" action="https://script.google.com/macros/s/AKfycbweZZmOWMDwhk2En18zcvjw9slRL5tj7bnpbkNK/exec" onsubmit="thankyou()">
                   <p>이름 (Name)<br/>
-                    <input class="short" type="text" autocomplete="off" name="name" placeholder="성명, 기업명" required="required"/>
+                    <input class="name" type="text" autocomplete="off" name="name" placeholder="성명, 기업명" required="required"/>
                   </p>
                   <p>연락처 (Call)<br/>
-                    <input class="short" type="text" autocomplete="off" name="call" placeholder="휴대폰, 유선전화" required="required"/>
+                    <input class="call" type="text" autocomplete="off" name="call" placeholder="휴대폰, 유선전화" required="required"/>
                   </p>
                   <p>이메일 (E-mail)<br/>
-                    <input class="short" type="email" autocomplete="off" name="email" placeholder="email@company.com" required="required"/>
+                    <input class="email" type="email" autocomplete="off" name="email" placeholder="email@company.com" required="required"/>
                   </p>
                   <p>남기실 말씀 (Message)<br/>
-                    <textarea type="text" autocomplete="off" name="message"></textarea>
+                    <textarea id="textarea" type="text" autocomplete="off" name="message"></textarea>
                   </p>
                   <button class="send" type="submit">Send</button>
                   <iframe name="sendiframe" style="display:none;" frameborder="0"></iframe>
@@ -463,11 +465,11 @@
         str = str.replace(/(?:\\r\n|\r|\n)/g, '<br />');
         //enter to br
     function thankyou() {
-        let contInput = document.querySelector('.short'),
-        inpuText = contInput.innterHTML;
-        alert('전송되었습니다. 감사합니다.')
-        var clearInput = document.getElementById("textarea").innerHTML;
-        clearInput = ''
+        document.querySelector(".name").value = null;
+        document.querySelector(".call").value = null;
+        document.querySelector(".email").value = null;
+        document.getElementById("textarea").value = null;
+        alert('전송되었습니다. 감사합니다.');
     }
     //contact script end
   </script>
