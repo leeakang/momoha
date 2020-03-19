@@ -193,7 +193,6 @@ html, body{
                 margin-left:7vh;
                 &:first-child{
                     margin:0;
-
                 }
                 display:inline-block;
                 a{
@@ -207,8 +206,8 @@ html, body{
                         transition-duration: 0.3s;
                     }
                 }
-            }
-        }
+            }//li
+        }//ul
     }
     #hamMenu{
         width:7vh;
@@ -440,10 +439,13 @@ html, body{
         .pg03{
             .rightSide{
                 white-space: normal;
-                overflow:auto;
+                &::-webkit-scrollbar{
+                    display:none;
+                }
                 #mmhacc{
                     height:100%;
-                    overflow:auto;
+                    overflow-y:auto;
+                    overflow-x: hidden;
                     &::-webkit-scrollbar{
                         background:rgba(0,0,0,0);
                         width:4px;
@@ -458,6 +460,17 @@ html, body{
                         &:hover{
                             transform:scale(1.03);
                         }
+                    }
+                }//mmhacc
+                #mmhaccBT{
+                    border:1px solid red;
+                    button{
+                        width:10vh;
+                        height:10vh;
+                        border-radius: 50%;
+                        background:none;
+                        border:2px solid $colorPT;
+                        color:$colorPT;
                     }
                 }
             }
@@ -527,6 +540,9 @@ html, body{
                                 border:3px solid $colorPT;
                                 background:none;
                                 color:#fff;
+                                &:focus{
+                                    border:3px solid #fff;
+                                }
                             }
                             .send{
                                 width:15vh;
@@ -549,40 +565,6 @@ html, body{
                             }//input
                         }//form
                     }//contactWrapper
-                    .thankyou{
-                        z-index:99;
-                        width:500px;
-                        height:300px;
-                        position:absolute;
-                        top:50%;
-                        left:50%;
-                        transform:translate(-50%,-50%);
-                        transition-duration: 0.3s;
-                        text-align:center;
-                        background:gray;
-                        border-radius:10px;
-                        color:#fff;
-                        padding-top:100px;
-                        display:none;
-                        .kor{
-                            font-size:20px;
-                        }
-                        .confirm{
-                            font-size:20px;
-                            a{
-                                color:#fff;
-                                border:1px solid #fff;
-                                position:absolute;
-                                transform:translate(-50%, 60%);
-                                padding:20px 40px;
-                                border-radius:5px;
-                                transition-duration: 0.3s;
-                                &:hover{
-                                    background:#fff;
-                                }
-                            }//a
-                        }//confirm
-                    }//thankyou
                 }
             }
             .rightSide{
@@ -603,9 +585,10 @@ html, body{
                     top: 100%;
                     animation: crawl 30s linear infinite;
                     .title {
-                        font-size: 3vh;
+                        font-size: 2.5vh;
                         text-align: center;
                         h1{
+                            font-size:3.5vh;
                             margin: 0 0 3vh;
                             text-transform: uppercase;
                         }
@@ -615,9 +598,10 @@ html, body{
                     position: absolute;
                     top: 100%;
                     .title {
-                        font-size: 3vh;
+                        font-size: 2.5vh;
                         text-align: center;
                         h1{
+                            font-size:3.5vh;
                             margin: 0 0 3vh;
                             text-transform: uppercase;
                         }

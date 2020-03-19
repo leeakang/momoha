@@ -49,6 +49,8 @@ html(lang="en")
                         a(href="#") Contact
                     li
                         a(href="#subs") Concerned
+                    li.close
+                        a(onclick="menuClose()") X
             #cont
                 #mainPage.pg01
                     .contents.leftSide#home
@@ -78,20 +80,24 @@ html(lang="en")
                     .contents.leftSide
                     .contents.rightSide
                         #mmhacc
-                            img(src="../images/acc02.jpeg" alt='momoha_acc_01')
-                            img(src="../images/acc03.jpeg" alt='momoha_acc_02')
-                            img(src="../images/acc04.jpeg" alt='momoha_acc_03')
-                            img(src="../images/acc05.jpeg" alt='momoha_acc_04')
-                            img(src="../images/acc06.jpeg" alt='momoha_acc_05')
-                            img(src="../images/acc07.jpeg" alt='momoha_acc_06')
-                            img(src="../images/acc08.jpeg" alt='momoha_acc_07')
-                            img(src="../images/acc09.jpeg" alt='momoha_acc_08')
+                            img(src="../images/acc02.jpeg" alt='momoha_acc_01' onmouseover="eyeOn()" onmouseout="eyeOff()")
+                            img(src="../images/acc03.jpeg" alt='momoha_acc_02' onmouseover="eyeOn()" onmouseout="eyeOff()")
+                            img(src="../images/acc04.jpeg" alt='momoha_acc_03' onmouseover="eyeOn()" onmouseout="eyeOff()")
+                            img(src="../images/acc05.jpeg" alt='momoha_acc_04' onmouseover="eyeOn()" onmouseout="eyeOff()")
+                            img(src="../images/acc06.jpeg" alt='momoha_acc_05' onmouseover="eyeOn()" onmouseout="eyeOff()")
+                            img(src="../images/acc07.jpeg" alt='momoha_acc_06' onmouseover="eyeOn()" onmouseout="eyeOff()")
+                            img(src="../images/acc08.jpeg" alt='momoha_acc_07' onmouseover="eyeOn()" onmouseout="eyeOff()")
+                            img(src="../images/acc09.jpeg" alt='momoha_acc_08' onmouseover="eyeOn()" onmouseout="eyeOff()")
+                        #mmhaccBT
+                            button.up(onclick='up()') Up
+                            br
+                            button.down(onclick='down()') Down
                 #mainPage.pg04
                     .contents.leftSide
                         #contact
                             .SNS
                                 div.contact
-                                    p Contact link for business&chill
+                                    p Contact Momoha
                                     div.igLogo
                                         a(href="https://www.instagram.com/momoha_acc/?hl=ko" target="_blank")
                                             img(src='../images/igLogo.png')
@@ -113,13 +119,7 @@ html(lang="en")
                                         br
                                         textarea#textarea(type="text", autocomplete="off", name="message")
                                     button(type="submit", class="send") Send
-                                    iframe(name="sendiframe", style="display:none;", frameborder="0")
-                            .thankyou
-                                p.kor 전송되었습니다. 소중한 의견 감사합니다.
-                                p.eng Success. Thanks for contacting.
-                                p.confirm
-                                    a(onclick="closeAlert()") 확인 
-                                        span.timer
+                                    iframe(name="sendiframe", style="display:none;")
                     .contents.rightSide#subs
                         #star-wars
                             .sub
@@ -335,6 +335,12 @@ html(lang="en")
             ham.style.top = '-10%'
             cont.style.opacity = '0.5'
         }
+        function menuClose(){
+            nav.style.top = '-10%'
+            ham.style.top = '6%'
+            ham.style.transitionDuration = '.5s'
+            cont.style.opacity = '1'
+        }
         function smooth(){
             wrapper.style.scrollBehavior="smooth"
             ham.style.top = '6%'
@@ -457,3 +463,17 @@ html(lang="en")
             alert('전송되었습니다. 감사합니다.');
         }
         //contact script end
+        function eyeOn(){
+            circle.style.border = 'solid 1px #fff'//#7effb8
+            circle.style.borderRadius = '100% 5%'
+            circle.style.transform = 'scale(1.5) rotate(45deg) translate(-50%, 0%)'
+            dot.style.transform = 'scale(1.2) translate(-260%, -260%)'
+            //dot.style.background = '#7effb8'
+        }
+        function eyeOff(){
+            circle.style.border = '1px solid rgba(255,255,255,0.5)'
+            circle.style.borderRadius = '50%'
+            circle.style.transform = 'scale(1.0) rotate(0deg) translate(-50%,-50%)'
+            dot.style.transform = 'scale(1.0) translate(-300%, -300%)'
+            //dot.style.background = '#fff'
+        }

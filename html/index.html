@@ -45,6 +45,7 @@
           <li><a href="#">SHOP</a></li>
           <li><a href="#">Contact</a></li>
           <li><a href="#subs">Concerned</a></li>
+          <li class="close"><a onclick="menuClose()">X</a></li>
         </ul>
       </div>
       <div id="cont">
@@ -83,7 +84,11 @@
         <div class="pg03" id="mainPage">
           <div class="contents leftSide"></div>
           <div class="contents rightSide">
-            <div id="mmhacc"><img src="../images/acc02.jpeg" alt="momoha_acc_01"/><img src="../images/acc03.jpeg" alt="momoha_acc_02"/><img src="../images/acc04.jpeg" alt="momoha_acc_03"/><img src="../images/acc05.jpeg" alt="momoha_acc_04"/><img src="../images/acc06.jpeg" alt="momoha_acc_05"/><img src="../images/acc07.jpeg" alt="momoha_acc_06"/><img src="../images/acc08.jpeg" alt="momoha_acc_07"/><img src="../images/acc09.jpeg" alt="momoha_acc_08"/></div>
+            <div id="mmhacc"><img src="../images/acc02.jpeg" alt="momoha_acc_01" onmouseover="eyeOn()" onmouseout="eyeOff()"/><img src="../images/acc03.jpeg" alt="momoha_acc_02" onmouseover="eyeOn()" onmouseout="eyeOff()"/><img src="../images/acc04.jpeg" alt="momoha_acc_03" onmouseover="eyeOn()" onmouseout="eyeOff()"/><img src="../images/acc05.jpeg" alt="momoha_acc_04" onmouseover="eyeOn()" onmouseout="eyeOff()"/><img src="../images/acc06.jpeg" alt="momoha_acc_05" onmouseover="eyeOn()" onmouseout="eyeOff()"/><img src="../images/acc07.jpeg" alt="momoha_acc_06" onmouseover="eyeOn()" onmouseout="eyeOff()"/><img src="../images/acc08.jpeg" alt="momoha_acc_07" onmouseover="eyeOn()" onmouseout="eyeOff()"/><img src="../images/acc09.jpeg" alt="momoha_acc_08" onmouseover="eyeOn()" onmouseout="eyeOff()"/></div>
+            <div id="mmhaccBT">
+              <button class="up" onclick="up()">Up</button><br/>
+              <button class="down" onclick="down()">Down</button>
+            </div>
           </div>
         </div>
         <div class="pg04" id="mainPage">
@@ -91,7 +96,7 @@
             <div id="contact">
               <div class="SNS">
                 <div class="contact">
-                  <p>Contact link for business&chill</p>
+                  <p>Contact Momoha</p>
                   <div class="igLogo"><a href="https://www.instagram.com/momoha_acc/?hl=ko" target="_blank"><img src="../images/igLogo.png"/></a></div>
                   <div class="mnemLogo"><a href="http://mnem.co.kr/" target="_blank"><img src="../images/mnemLogo.png"/></a></div>
                 </div>
@@ -111,13 +116,8 @@
                     <textarea id="textarea" type="text" autocomplete="off" name="message"></textarea>
                   </p>
                   <button class="send" type="submit">Send</button>
-                  <iframe name="sendiframe" style="display:none;" frameborder="0"></iframe>
+                  <iframe name="sendiframe" style="display:none;"></iframe>
                 </form>
-              </div>
-              <div class="thankyou">
-                <p class="kor">전송되었습니다. 소중한 의견 감사합니다.</p>
-                <p class="eng">Success. Thanks for contacting.</p>
-                <p class="confirm"><a onclick="closeAlert()">확인 <span class="timer"></span></a></p>
               </div>
             </div>
           </div>
@@ -350,6 +350,12 @@
         ham.style.top = '-10%'
         cont.style.opacity = '0.5'
     }
+    function menuClose(){
+        nav.style.top = '-10%'
+        ham.style.top = '6%'
+        ham.style.transitionDuration = '.5s'
+        cont.style.opacity = '1'
+    }
     function smooth(){
         wrapper.style.scrollBehavior="smooth"
         ham.style.top = '6%'
@@ -472,5 +478,19 @@
         alert('전송되었습니다. 감사합니다.');
     }
     //contact script end
+    function eyeOn(){
+        circle.style.border = 'solid 1px #fff'//#7effb8
+        circle.style.borderRadius = '100% 5%'
+        circle.style.transform = 'scale(1.5) rotate(45deg) translate(-50%, 0%)'
+        dot.style.transform = 'scale(1.2) translate(-260%, -260%)'
+        //dot.style.background = '#7effb8'
+    }
+    function eyeOff(){
+        circle.style.border = '1px solid rgba(255,255,255,0.5)'
+        circle.style.borderRadius = '50%'
+        circle.style.transform = 'scale(1.0) rotate(0deg) translate(-50%,-50%)'
+        dot.style.transform = 'scale(1.0) translate(-300%, -300%)'
+        //dot.style.background = '#fff'
+    }
   </script>
 </html>
