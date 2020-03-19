@@ -29,7 +29,7 @@ html(lang="en")
         #cursor
         #circle
         #wrapper(draggable="true")
-            #hamMenu(onclick="hamclick()")
+            #hamMenu(onclick="navDown()")
                 div
                 div
                 div
@@ -50,7 +50,7 @@ html(lang="en")
                     li
                         a(href="#subs") Concerned
                     li.close
-                        a(onclick="menuClose()") X
+                        a(onclick="navUp()") X
             #cont
                 #mainPage.pg01
                     .contents.leftSide#home
@@ -61,9 +61,9 @@ html(lang="en")
                             button(onclick="start()") click for Swim
                         #pics
                             div.emotionPic
-                                img(src="../images/emotion07.jpg")
-                                img(src="../images/emotion07.jpg")
-                                img(src="../images/emotion07.jpg")
+                                img(src="../images/emotion07.jpg" onmouseover="eyeOn()" onmouseout="eyeOff()")
+                                img(src="../images/emotion07.jpg" onmouseover="eyeOn()" onmouseout="eyeOff()")
+                                img(src="../images/emotion07.jpg" onmouseover="eyeOn()" onmouseout="eyeOff()")
                     .contents.rightSide
                         #title.glitching(data-text="MOMOHA") MOMOHA
                         .subTitle モモバ。
@@ -265,7 +265,7 @@ html(lang="en")
             title = document.getElementById('title'),
             wrapper = document.getElementById('wrapper'),
             subTitle = document.querySelector('.subTitle'),
-            pics = document.getElementById('pics'),
+            pics = document.querySelector('.emotionPic'),
             nav = document.getElementById('nav');
             title.style.transform="rotate(90deg) translate(0%, -160%)";
             title.style.color="#7effb8";
@@ -277,12 +277,22 @@ html(lang="en")
             subTitle.style.fontSize="7vh"
             start.style.display="none"
             wrapper.style.overflowX="auto"
-            pics.style.opacity="1";
+            pics.style.bottom="10%"
             nav.style.top="6%"
             nav.style.transitionDuration="1s"
             scroll();
             drag();
             picdrag();
+        }
+        function navDown(){
+            nav.style.top = '6%'
+            ham.style.top = '-10%'
+            cont.style.opacity = '0.5'
+        }
+        function navUp(){
+            nav.style.top = '-10%'
+            ham.style.top = '6%'
+            cont.style.opacity = '1'
         }
         function scrollnone(){
             wrapper.style.scrollBehavior="unset"
@@ -291,10 +301,7 @@ html(lang="en")
         function scroll() {
         wrapper.addEventListener('mousewheel', function(e){
             e.preventDefault();
-            nav.style.top = '-10%'
-            ham.style.transitionDuration="1s"
-            ham.style.top="6%"
-            cont.style.opacity="1"
+            navUp();
             if(e.wheelDelta >= 0){
                 wrapper.scrollBy(-50, 0);
             }else if(e.wheelDelta < 0){
@@ -320,32 +327,16 @@ html(lang="en")
             wrapper.addEventListener('mousemove', (e) => {
             if(!isDown) return;
             e.preventDefault();
-            ham.style.top = '6%'
-            ham.style.transitionDuration = "1s"
-            nav.style.top = '-10%'
-            cont.style.opacity = "1"
+            navUp();
             const x = e.pageX - wrapper.offsetLeft;
             const walk = (x - startX) * 2; //scroll-fast
             wrapper.scrollLeft = scrollLeft - walk;
             });
             }
         //drag to slide end
-        function hamclick(){
-            nav.style.top = '6%'
-            ham.style.top = '-10%'
-            cont.style.opacity = '0.5'
-        }
-        function menuClose(){
-            nav.style.top = '-10%'
-            ham.style.top = '6%'
-            ham.style.transitionDuration = '.5s'
-            cont.style.opacity = '1'
-        }
         function smooth(){
             wrapper.style.scrollBehavior="smooth"
-            ham.style.top = '6%'
-            nav.style.top = '-10%'
-            cont.style.opacity =  '1'
+            navUp();
             setTimeout(scrollnone,10)
         }
         function rippleEffect() {
@@ -456,11 +447,14 @@ html(lang="en")
             str = str.replace(/(?:\\r\n|\r|\n)/g, '<br />');
             //enter to br
         function thankyou() {
-            document.querySelector(".name").value = null;
-            document.querySelector(".call").value = null;
-            document.querySelector(".email").value = null;
-            document.getElementById("textarea").value = null;
-            alert('전송되었습니다. 감사합니다.');
+            function delInput(){
+                document.querySelector(".name").value = null;
+                document.querySelector(".call").value = null;
+                document.querySelector(".email").value = null;
+                document.getElementById("textarea").value = null;
+                alert('전송되었습니다. 감사합니다.');
+            }
+            setTimeout(delInput,100)
         }
         //contact script end
         function eyeOn(){
