@@ -305,18 +305,14 @@
         cont.style.opacity = '0.5'
     }
     function navUp(){
-        clearTimeout(hamTime);
         ham.style.opacity = '1'
         nav.style.top = '-10%'
         ham.style.top = '6%'
         cont.style.opacity = '1'
-        function hamTime(){
-            setTimeout(function () {
-            ham.style.opacity = '0';
-            }, 5000);
-        }
-        hamTime();
     }
+    var timer = setTimeout(function(){
+        ham.style.opacity = '0';
+    }, 5000)
     function scrollnone(){
         wrapper.style.scrollBehavior="unset"
     }
